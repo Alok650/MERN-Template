@@ -1,5 +1,10 @@
 ## MERN Template
 
+<p>
+  <img src="https://www.linkpicture.com/q/preview_3.png" />
+</p>
+<b>Preview: </b><a href="https://mern-template-woad.vercel.app/#">Template</a>
+
 # About
 A simple MERN template with authentication system. This template can be used for development of full stack web applications.
 
