@@ -32,3 +32,12 @@ npm run dev
 - [ ] Session information stored with express sessions.
 - [ ] Store data for production in sessions with connect-mongo
 
+# Contribute
+
+<p>
+  <h3 align="center">Show your support by 🌟 the project !!</h3>
+  <h3 align="center">Feel free to contribute</h3>
+</p>
+
+<!-- # Development
+Want to contribute? Great!
