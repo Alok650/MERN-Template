@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import signup from '../images/signup.gif'
+import {Link} from 'react-router-dom'
 
 class Signup extends Component {
 	constructor() {
@@ -32,11 +33,10 @@ class Signup extends Component {
 			.then(response => {
 				console.log(response)
 				if (!response.data.errmsg) {
-					alert('successful signup')
-					window.location.href = '/login';
-					this.setState({ //redirect to login page
-						redirectTo: '/login'
-					})
+					window.location.href = '/face';
+					// this.setState({ //redirect to login page
+					// 	redirectTo: '/face'
+					// })
 				} else {
 					console.log('username already taken')
 				}
@@ -97,6 +97,7 @@ render() {
 				</div>
 				<div className="form-group ">
 					<button
+						to='/face'
 						className=" bg-gray-100 py-2 px-20 pointer hover:bg-gray-200"
 						onClick={this.handleSubmit}
 						type="submit"
