@@ -7,6 +7,7 @@ import LoginForm from './components/login-form'
 import Home from './components/home'
 import Navigationbar from './components/Navbar'
 import Dashboard from './components/Dashboard'
+import Face from './components/Face-auth'
 
 //Tools/Pages
 import Tool1 from './pages/too1'
@@ -115,6 +116,11 @@ class App extends Component {
           path="/about"
           render={() =>
             <About/>}
+        />
+        <Route
+          path="/face"
+          render={() =>
+            <Face/>}
         />
       </div>
     );

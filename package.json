@@ -1,6 +1,6 @@
 {
   "name": "mern_template",
-  "author":"Alok650",
+  "author": "Alok650",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,6 +28,7 @@
     "react-dom": "^16.2.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-webcam": "^6.0.0",
     "spectre.css": "^0.5.0",
     "tailwindcss-cli": "^0.1.2"
   },
@@ -37,7 +38,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "api": "nodemon ./server/server.js",
-    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
+    "dev": "concurrently \"craco start\" \"nodemon server/server.js\""
   },
   "browserslist": {
     "production": [
@@ -56,7 +57,7 @@
     "concurrently": "^3.5.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "nodemon": "^1.17.5",
+    "nodemon": "^2.0.13",
     "postcss": "7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   },
