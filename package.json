@@ -1,6 +1,6 @@
 {
   "name": "mern_template",
-  "author":"Alok650",
+  "author": "Alok650",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,7 +37,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "api": "nodemon ./server/server.js",
-    "dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\""
+    "dev": "concurrently \"craco start\" \"nodemon server/server.js\""
   },
   "browserslist": {
     "production": [
