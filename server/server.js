@@ -9,6 +9,10 @@ const app = express()
 const PORT = 8080
 // Route requires
 const user = require('./routes/user')
+const upload = require("./routes/upload");
+const Grid = require("gridfs-stream");
+
+
 
 // MIDDLEWARE
 app.use(morgan('dev'))
@@ -22,7 +26,7 @@ app.use(bodyParser.json())
 // Sessions
 app.use(
 	session({
-		secret: 'team-name', //pick a random string to make the hash that is generated secure
+		secret: 'goal-diggers', //pick a random string to make the hash that is generated secure
 		store: new MongoStore({ mongooseConnection: dbConnection }),
 		resave: false, //required
 		saveUninitialized: false //required
@@ -36,6 +40,7 @@ app.use(passport.session()) // calls the deserializeUser
 
 // Routes
 app.use('/user', user)
+// app.use("/file", upload);
 
 // Starting Server 
 app.listen(PORT, () => {

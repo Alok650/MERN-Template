@@ -8,6 +8,8 @@ import Home from './components/home'
 import Navigationbar from './components/Navbar'
 import Dashboard from './components/Dashboard'
 import Face from './components/Face-auth'
+import Ocr from './components/Ocr'
+import UploadID from './components/uploadID'
 
 //Tools/Pages
 import Tool1 from './pages/too1'
@@ -77,7 +79,7 @@ class App extends Component {
         {/* Routes to different components */}
         <Route
           exact path="/"
-          component={Home} />
+          component={Home} />  
         <Route
           path="/login"
           render={() =>
@@ -121,6 +123,16 @@ class App extends Component {
           path="/face"
           render={() =>
             <Face/>}
+        />
+         <Route
+          path="/ocr"
+          render={() =>
+            <Ocr/>}
+        />
+        <Route
+          path="/upload"
+          render={() =>
+            <UploadID/>}
         />
       </div>
     );

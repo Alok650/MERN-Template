@@ -12,7 +12,9 @@ class Signup extends Component {
 			confirmPassword: '',
 
 		}
-		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleCapReq = this.handleCapReq.bind(this)
+		this.handleUpload = this.handleUpload.bind(this)
+
 		this.handleChange = this.handleChange.bind(this)
 	}
 	handleChange(event) {
@@ -20,7 +22,33 @@ class Signup extends Component {
 			[event.target.name]: event.target.value
 		})
 	}
-	handleSubmit(event) {
+	handleUpload(event){
+		console.log('sign-up handleSubmit, username: ')
+		console.log(this.state.username)
+		event.preventDefault()
+
+		//request to server to add a new username/password
+		axios.post('/user/', {
+			username: this.state.username,
+			password: this.state.password
+		})
+			.then(response => {
+				console.log(response)
+				if (!response.data.errmsg) {
+					window.location.href = '/upload';
+					// this.setState({ //redirect to login page
+					// 	redirectTo: '/face'
+					// })
+				} else {
+					console.log('username already taken')
+				}
+			}).catch(error => {
+				console.log('signup error: ')
+				console.log(error)
+
+			})
+	}
+	handleCapReq(event) {
 		console.log('sign-up handleSubmit, username: ')
 		console.log(this.state.username)
 		event.preventDefault()
@@ -97,9 +125,25 @@ render() {
 				</div>
 				<div className="form-group ">
 					<button
+						to='/upload'
+						className=" bg-gray-100 py-2 px-20 pointer hover:bg-gray-200"
+						onClick={this.handleUpload}
+						type="submit"
+					> Upload ID
+					</button>
+
+					<button
 						to='/face'
 						className=" bg-gray-100 py-2 px-20 pointer hover:bg-gray-200"
-						onClick={this.handleSubmit}
+						onClick={this.handleCapReq}
+						type="submit"
+					>Capture ID</button>
+				</div>
+				<div className="form-group ">
+					<button
+						to='/face'
+						className=" bg-gray-100 py-2 px-20 pointer hover:bg-gray-200"
+						onClick={this.handleUpload}
 						type="submit"
 					>Sign up</button>
 				</div>
